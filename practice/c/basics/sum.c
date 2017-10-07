@@ -1,3 +1,6 @@
+/* Author: Thomas Baird
+ * Simple Sum program using integers and floats
+ */
 #include <stdio.h>
 
 int sum(int first, int second);

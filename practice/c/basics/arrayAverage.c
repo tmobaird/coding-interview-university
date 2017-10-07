@@ -1,3 +1,6 @@
+/* Author: Thomas Baird
+ * Program to calculate the average of all elements in an array.
+ */
 #include <stdio.h>
 
 int main() {
@@ -11,4 +14,3 @@ int main() {
     int average = sum / size;
     printf("The average of all elements in the array is %d.\n", average);
 }
-
