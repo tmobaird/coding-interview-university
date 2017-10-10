@@ -4,27 +4,17 @@
  * As well as pushing, appending, popping, and removing nodes from
  * the list.
  *
- * TODO: remove_by_index() and remove_by_value()
+ * TODO: remove_by_value()
  */
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct node {
-    int val;
-    struct node * next;
-} node_t;
-
-void printlist(node_t * head);
-void append(node_t * head, int val);
-void push(node_t ** head, int val);
-int pop(node_t ** head);
-int removelast(node_t * head);
+#include "LinkedList.h"
 
 int main() {
-    node_t * head = NULL;
-    head = malloc(sizeof(node_t));
+    Node * head = NULL;
+    head = malloc(sizeof(Node));
     head->val = 1;
-    head->next = malloc(sizeof(node_t));
+    head->next = malloc(sizeof(Node));
     head->next->val = 2;
     head->next->next = NULL;
     printf("Printing Initial List Sequence:\n");
@@ -35,49 +25,63 @@ int main() {
     printlist(head);
 
     printf("Print List Sequence after Pushing 0:\n");
-    node_t ** temphead = &head; // creates pointer to head pointer so we can modify the head
+    Node ** temphead = &head; // creates pointer to head pointer so we can modify the head
     push(temphead, 0);
     printlist(head);
 
     printf("Print List Sequence after Popping first element:\n");
-    temphead = &head;
     pop(temphead);
     printlist(head);
 
     printf("Print List Sequence after Removing last element:\n");
-    removelast(head);
+    remove_last(head);
+    printlist(head);
+
+    printf("Adding more element(s):\n");
+    append(head, 3);
+    printlist(head);
+    printf("Print List Sequence after Removing element at index 1:\n");
+    remove_by_index(temphead, 1);
+    printlist(head);
+
+    printf("Adding more element(s):\n");
+    append(head, 4);
+    append(head, 5);
+    printlist(head);
+    printf("Print List Sequence after Removing element with value:\n");
+    remove_by_value(temphead, 1);
     printlist(head);
 }
 
-void printlist(node_t * head) {
-    node_t * current = head; // sets iterator to head
+void printlist(Node * head) {
+    Node * current = head; // sets iterator to head
     while(current != NULL) {
         printf("%d\n", current->val);
         current = current->next; // moves current iterator to next element in list
     }
 }
 
-void append(node_t * head, int val) {
-    node_t * current = head; // sets iterator to head
+void append(Node * head, int val) {
+    Node * current = head; // sets iterator to head
     while(current->next != NULL) { // iterates til last element
         current = current->next; // moves current iterator to next element in list
     }
-    current->next = malloc(sizeof(node_t)); // creates space for new element
+    current->next = malloc(sizeof(Node)); // creates space for new element
     current->next->val = val; // sets new end element
     current->next->next = NULL;
 }
 
-void push(node_t ** head, int val) {
-    node_t * newnode;
-    newnode = malloc(sizeof(node_t));
+void push(Node ** head, int val) {
+    Node * newnode;
+    newnode = malloc(sizeof(Node));
     newnode->val = val;
     newnode->next = *head; // derefrenced because head is a double pointer
     *head = newnode;
 }
 
-int pop(node_t ** head) {
+int pop(Node ** head) {
     int retval = -1;
-    node_t * nexthead = NULL; // creates empty new head
+    Node * nexthead = NULL; // creates empty new head
 
     if(*head == NULL) { // if list is empty
         return -1;
@@ -90,8 +94,8 @@ int pop(node_t ** head) {
     return retval;
 }
 
-int removelast(node_t * head) {
-    node_t * current = head;
+int remove_last(Node * head) {
+    Node * current = head;
     int retval = 0;
     if(current->next == NULL) { // if next is NULL that means we are in last element and we can remove
         retval = current->val;
@@ -107,5 +111,35 @@ int removelast(node_t * head) {
     retval = current->next->val;
     free(current->next); // remove next element
     current->next = NULL; // sets current element's next to null because this is new end of list
+    return retval;
+}
+
+int remove_by_index(Node ** head, int index) {
+    int retval = -1;
+    Node * current = *head;
+    int i = 0;
+
+    if(index == 0) { // if first element we can just pop
+        pop(head);
+    }
+
+    for(i = 0; i < index - 1; i++) { // we stop one before ideal index because we need to link this node to next of the element we are removing
+        if(current->next == NULL) { // make sure next is a valid element for us to delete. If not, return bad value
+            return retval;
+        }
+        i++;
+        current = current->next;
+    }
+
+    Node * Nodeo_delete = current->next;
+    retval = Nodeo_delete->val;
+    current->next = Nodeo_delete->next; // removing Nodeo_delete from linked list
+    free(Nodeo_delete); // freeing node
+    return retval;
+}
+
+int remove_by_value(Node ** head, int value) {
+    int retval = -1;
+    printf("TODO: Need to implement remove_by_value\n");
     return retval;
 }
