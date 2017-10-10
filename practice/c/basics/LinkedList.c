@@ -131,10 +131,10 @@ int remove_by_index(Node ** head, int index) {
         current = current->next;
     }
 
-    Node * Nodeo_delete = current->next;
-    retval = Nodeo_delete->val;
-    current->next = Nodeo_delete->next; // removing Nodeo_delete from linked list
-    free(Nodeo_delete); // freeing node
+    Node * node_to_delete = current->next;
+    retval = node_to_delete->val;
+    current->next = node_to_delete->next; // removing node_to_delete from linked list
+    free(node_to_delete); // freeing node
     return retval;
 }
 
