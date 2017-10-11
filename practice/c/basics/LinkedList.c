@@ -48,8 +48,8 @@ int main() {
     append(head, 4);
     append(head, 5);
     printlist(head);
-    printf("Print List Sequence after Removing element with value:\n");
-    remove_by_value(temphead, 1);
+    printf("Print List Sequence after Removing element with value 4:\n");
+    remove_by_value(temphead, 4);
     printlist(head);
 }
 
@@ -108,10 +108,7 @@ int remove_last(Node * head) {
         current = current->next;
     }
 
-    retval = current->next->val;
-    free(current->next); // remove next element
-    current->next = NULL; // sets current element's next to null because this is new end of list
-    return retval;
+    return remove_next_node(current);
 }
 
 int remove_by_index(Node ** head, int index) {
@@ -120,7 +117,7 @@ int remove_by_index(Node ** head, int index) {
     int i = 0;
 
     if(index == 0) { // if first element we can just pop
-        pop(head);
+        return pop(head);
     }
 
     for(i = 0; i < index - 1; i++) { // we stop one before ideal index because we need to link this node to next of the element we are removing
@@ -131,15 +128,32 @@ int remove_by_index(Node ** head, int index) {
         current = current->next;
     }
 
-    Node * node_to_delete = current->next;
-    retval = node_to_delete->val;
-    current->next = node_to_delete->next; // removing node_to_delete from linked list
-    free(node_to_delete); // freeing node
-    return retval;
+    return remove_next_node(current);
 }
 
 int remove_by_value(Node ** head, int value) {
     int retval = -1;
-    printf("TODO: Need to implement remove_by_value\n");
+    Node * current = *head;
+
+    if(current->val == value) {
+        return pop(head);
+    }
+
+    while(current->next != NULL) {
+        if(current->next->val == value) {
+            return remove_next_node(current);
+        }
+        current = current->next;
+    }
+
+    printf("Reached end of list. Node w/ value %d not found.\n", value);
+    return -1;
+}
+
+int remove_next_node(Node * current) {
+    Node * node_to_delete = current->next;
+    int retval = node_to_delete->val;
+    current->next = node_to_delete->next; // removing node_to_delete from linked list
+    free(node_to_delete); // freeing node
     return retval;
 }

@@ -20,5 +20,6 @@ int pop(Node ** head);
 int remove_last(Node * head);
 int remove_by_index(Node ** head, int index);
 int remove_by_value(Node ** head, int value);
+int remove_next_node(Node * previous);
 
 #endif // _LINKEDLIST_H
