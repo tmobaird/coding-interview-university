@@ -17,3 +17,8 @@ To set up your environment, do the following:
     - ex. `gcc -o hello hello.c` to compile and `./hello` to run.
 
 Happy C Programming!
+
+### Unity Testing Notes
+
+- **Must pull Unity source**. In your container's `/root` directory, run `git clone https://github.com/ThrowTheSwitch/Unity.git`
+- To run Unity tests, cd to the directory with your Makefile for Unity, and run `make clean test`, you should now see your tests run and their results.
