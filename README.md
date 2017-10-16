@@ -69,7 +69,7 @@ If you want to be a reliability engineer or operations engineer, study more from
 - [The Daily Plan](#the-daily-plan)
 - [Algorithmic complexity / Big-O / Asymptotic analysis](#algorithmic-complexity--big-o--asymptotic-analysis)
 - [Data Structures](#data-structures)
-    - [Arrays](#arrays)
+    - [Arrays](#arrays--up-nextexclamation)
     - [Linked Lists](#linked-lists)
     - [Stack](#stack)
     - [Queue](#queue)
