@@ -232,7 +232,7 @@ Sometimes the classes are not in session so you have to wait a couple of months,
 - [x] [Effective Whiteboarding during Programming Interviews](http://www.coderust.com/blog/2014/04/10/effective-whiteboarding-during-programming-interviews/)
 - [x] [Demystifying Tech Recruiting](https://www.youtube.com/watch?v=N233T0epWTs)
 - [ ] Cracking The Coding Interview Set 1:
-    - [ ] [Gayle L McDowell - Cracking The Coding Interview (video)](https://www.youtube.com/watch?v=rEJzOhC5ZtQ)
+    - [x] [Gayle L McDowell - Cracking The Coding Interview (video)](https://www.youtube.com/watch?v=rEJzOhC5ZtQ)
     - [ ] [Cracking the Coding Interview with Author Gayle Laakmann McDowell (video)](https://www.youtube.com/watch?v=aClxtDcdpsQ)
 - [ ] How to Get a Job at the Big 4:
     - [ ] [How to Get a Job at the Big 4 - Amazon, Facebook, Google & Microsoft (video)](https://www.youtube.com/watch?v=YJZCUhxNCv8)
@@ -478,7 +478,7 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 
 ## Prerequisite Knowledge
 
-- [ ] **Learn C**
+- [x] **Learn C**
     - C is everywhere. You'll see examples in books, lectures, videos, *everywhere* while you're studying.
     - [ ] [C Programming Language, Vol 2](https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628)
         - This is a short book, but it will give you a great handle on the C language and if you practice it a little
@@ -491,7 +491,7 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 
 ## Algorithmic complexity / Big-O / Asymptotic analysis
 - nothing to implement
-- [ ] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
+- [x] [Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
 - [ ] [Big O Notations (general quick tutorial) (video)](https://www.youtube.com/watch?v=V6mKVRU1evU)
 - [ ] [Big O Notation (and Omega and Theta) - best mathematical explanation (video)](https://www.youtube.com/watch?v=ei-A_wy5Yxw&index=2&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
 - [ ] Skiena:
@@ -515,7 +515,7 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 
 ## Data Structures
 
-- ### Arrays
+- ### Arrays (Up Next:exclamation:)
     - Implement an automatically resizing vector.
     - [ ] Description:
         - [Arrays (video)](https://www.coursera.org/learn/data-structures/lecture/OsBSF/arrays)
