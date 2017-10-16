@@ -515,7 +515,7 @@ Write code on a whiteboard or paper, not a computer. Test with some sample input
 
 ## Data Structures
 
-- ### Arrays (Up Next:exclamation:)
+- ### Arrays ( Up Next:exclamation:)
     - Implement an automatically resizing vector.
     - [ ] Description:
         - [Arrays (video)](https://www.coursera.org/learn/data-structures/lecture/OsBSF/arrays)
