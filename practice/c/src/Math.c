@@ -1,5 +1,6 @@
-/* Author: Thomas Baird
- * Simple Sum program using integers and floats
+/*
+ * Author: Thomas Baird
+ * Library of functions used for simple mathematical calculations
  */
 #include <stdio.h>
 #include "Math.h"
@@ -28,6 +29,23 @@ bool is_prime(int num) {
         }
     }
     return true;
+}
+
+int reverse(int num) {
+    int last;
+    int reversed_num = 0;
+    while(num > 0) {
+        last = num % 10; // gets last digit
+        // since this is new last it needs to multiply the previous number by 10
+        // to get proper number size
+        reversed_num = (reversed_num * 10) + last;
+        num = num / 10; // cuts number down, repeats
+    }
+    return reversed_num;
+}
+
+bool is_palindrome(int num) {
+    return reverse(num) == num;
 }
 
 

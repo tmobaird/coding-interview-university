@@ -33,6 +33,26 @@ void test_is_prime_should_ReturnFalse_when_num_is_one(void) {
     TEST_ASSERT(is_prime(1) == false);
 }
 
+void test_reverse_should_Return_0(void) {
+    TEST_ASSERT(reverse(0) == 0);
+}
+
+void test_reverse_should_Return_1(void) {
+    TEST_ASSERT(reverse(1) == 1);
+}
+
+void test_reverse_should_Return_321(void) {
+    TEST_ASSERT(reverse(321) == 123);
+}
+
+void test_is_palindrome_should_Return_true(void) {
+    TEST_ASSERT(is_palindrome(12321) == true);
+}
+
+void test_is_palindrome_should_Return_false(void) {
+    TEST_ASSERT(is_palindrome(12345) == false);
+}
+
 int main(void) {
     UNITY_BEGIN();
 
@@ -46,6 +66,13 @@ int main(void) {
     RUN_TEST(test_is_prime_should_ReturnTrue);
     RUN_TEST(test_is_prime_should_ReturnFalse);
     RUN_TEST(test_is_prime_should_ReturnFalse_when_num_is_one);
-
+    // reverse()
+    RUN_TEST(test_reverse_should_Return_1);
+    RUN_TEST(test_reverse_should_Return_321);
+    RUN_TEST(test_reverse_should_Return_0);
+    // is_palindrome()
+    RUN_TEST(test_is_palindrome_should_Return_true);
+    RUN_TEST(test_is_palindrome_should_Return_false);
+    
     return UNITY_END();
 }
