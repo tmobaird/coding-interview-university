@@ -12,5 +12,6 @@ int factorial(int num);
 bool is_prime(int num);
 int reverse(int num);
 bool is_palindrome(int num);
+int fibonacci(int index);
 
 #endif // _MATH_H

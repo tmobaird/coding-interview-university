@@ -53,6 +53,22 @@ void test_is_palindrome_should_Return_false(void) {
     TEST_ASSERT(is_palindrome(12345) == false);
 }
 
+void test_fibonacci_should_Return_neg_1(void) {
+    TEST_ASSERT(fibonacci(0) == -1);
+}
+
+void test_fibonacci_should_Return_1(void) {
+    TEST_ASSERT(fibonacci(1) == 1);
+    TEST_ASSERT(fibonacci(2) == 1);
+}
+
+void test_fibonacci_should_Return_2(void) {
+    TEST_ASSERT(fibonacci(3) == 2);
+}
+
+void test_fibonacci_should_Return_13(void) {
+    TEST_ASSERT(fibonacci(7) == 13);
+}
 int main(void) {
     UNITY_BEGIN();
 
@@ -73,6 +89,11 @@ int main(void) {
     // is_palindrome()
     RUN_TEST(test_is_palindrome_should_Return_true);
     RUN_TEST(test_is_palindrome_should_Return_false);
+    // fibonacci()
+    RUN_TEST(test_fibonacci_should_Return_neg_1);
+    RUN_TEST(test_fibonacci_should_Return_1);
+    RUN_TEST(test_fibonacci_should_Return_2);
+    RUN_TEST(test_fibonacci_should_Return_13);
     
     return UNITY_END();
 }

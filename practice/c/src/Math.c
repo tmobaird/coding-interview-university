@@ -48,6 +48,15 @@ bool is_palindrome(int num) {
     return reverse(num) == num;
 }
 
+int fibonacci(int index) {
+    if(index < 1) { // Exception Case
+        return -1;
+    }
+    if(index < 3) { // Base Case
+        return 1;
+    }
+    return fibonacci(index - 1) + fibonacci(index - 2);
+}
 
 float floatSum(int first, float second) {
     return first + second;
