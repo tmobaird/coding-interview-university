@@ -104,4 +104,20 @@ public class ArrayListTest {
         subject.remove(1);
         assertFalse(subject.contains(1));
     }
+
+    @Test
+    public void testClearDecreasesSizeToZero() {
+        subject = new ArrayList(new int[]{1, 2, 3});
+        subject.clear();
+        assertEquals(0, subject.size());
+    }
+
+    @Test
+    public void testClearRemovesElement() {
+        subject = new ArrayList(new int[]{1, 2, 3});
+        subject.clear();
+        assertFalse(subject.contains(1));
+        assertFalse(subject.contains(2));
+        assertFalse(subject.contains(3));
+    }
 }

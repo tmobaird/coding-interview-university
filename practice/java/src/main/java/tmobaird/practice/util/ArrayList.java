@@ -4,10 +4,6 @@ import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Arrays;
 
-/*
- * The following features should also be implemented:
- * - clear
- */
 public class ArrayList {
 
     private int length = 0;
@@ -29,6 +25,13 @@ public class ArrayList {
 
         elements[length] = element;
         length++;
+    }
+
+    public void clear() {
+        for (int i = length; i > 0; i--) {
+            elements = ArrayUtils.remove(elements, i - 1);
+            length -= 1;
+        }
     }
 
     public boolean contains(int element) {
